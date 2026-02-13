@@ -7,6 +7,30 @@ Blockly.Blocks['event_player_join'] = {
     }
 };
 
+Blockly.Blocks['event_player_quit'] = {
+    init: function() {
+        this.appendDummyInput().appendField("[이벤트] 플레이어 퇴장 시");
+        this.appendStatementInput("DO").setCheck(null);
+        this.setColour("#FFB900");
+    }
+};
+
+Blockly.Blocks['event_block_break'] = {
+    init: function() {
+        this.appendDummyInput().appendField("[이벤트] 블록을 부쉈을 때");
+        this.appendStatementInput("DO").setCheck(null);
+        this.setColour("#FFB900");
+    }
+};
+
+Blockly.Blocks['event_player_chat'] = {
+    init: function() {
+        this.appendDummyInput().appendField("[이벤트] 채팅을 쳤을 때");
+        this.appendStatementInput("DO").setCheck(null);
+        this.setColour("#FFB900");
+    }
+};
+
 Blockly.Blocks['placeholder_event_player'] = {
   init: function() {
     this.appendDummyInput().appendField("이벤트-플레이어");
