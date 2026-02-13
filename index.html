@@ -11,8 +11,10 @@
         <span class="logo">🧱BlockyCraft</span>
         <div class="controls">
             <input type="text" id="scriptName" placeholder="스크립트 이름 입력...">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
             <button onClick="saveConfig()" class="save-btn">
-                <span class="icon">📥</span> 다운로드 (.json)
+                <i class="fa-solid fa-file-export"></i> 다운로드 (.json)
             </button>
         </div>
     </nav>
@@ -22,11 +24,15 @@
     </div>
 
     <xml id="toolbox" style="display: none">
-        <category name = "이벤트" colour = "#FFAB19">
+        <category name="이벤트" colour="#FFB900">
             <block type="event_player_join"></block>
         </category>
-        <category name="액션" colour="#4C97FF">
-            <block type="action_send_message"></block>
+        <category name="액션" colour="#5BBD72">
+            <block type="action_send_msg_to"></block>
+        </category>
+        <category name="데이터" colour="#9B59B6">
+            <block type="placeholder_event_player"></block>
+            <block type="placeholder_event_world"></block>
         </category>
     </xml>
 

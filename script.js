@@ -1,21 +1,41 @@
 Blockly.Blocks['event_player_join'] = {
     init: function() {
-        this.appendDummyInput().appendField("플레이어 접속 시");
-        this.setNextStatement(true, null);
-        this.setColour(40);
+        this.appendDummyInput().appendField("🚀 [이벤트] 플레이어 접속");
+        this.appendStatementInput("DO").setCheck(null);
+        this.setColour("#FFB900");
+        this.setTooltip("플레이어 접속 시 실행");
     }
-}
+};
 
-Blockly.Blocks['action_send_message'] = {
-    init: function() {
-        this.appendDummyInput()
-            .appendField("메시지: ")
-            .appendField(new Blockly.FieldTextInput("환영합니다!"), "MSG");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(160);
-    }
-}
+Blockly.Blocks['placeholder_event_player'] = {
+  init: function() {
+    this.appendDummyInput().appendField("👤 event-player");
+    this.setOutput(true, "String");
+    this.setColour("#9B59B6");
+  }
+};
+
+Blockly.Blocks['placeholder_event_world'] = {
+  init: function() {
+    this.appendDummyInput().appendField("🌍 event-world");
+    this.setOutput(true, "String");
+    this.setColour("#9B59B6");
+  }
+};
+//------------------------------------------------------------------------------------------
+Blockly.Blocks['action_send_msg_to'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["플레이어", "PLAYER"], ["전체", "ALL"]]), "TARGET")
+        .appendField("에게 메시지 전송:");
+    this.appendValueInput("CONTENT").setCheck(["String", "Number"]);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#5BBD72");
+    this.setInputsInline(true);
+  }
+};
+//------------------------------------------------------------------------------------------
 
 const workspace = Blockly.inject('blocklyDiv', {
     toolbox: document.getElementById('toolbox'),
