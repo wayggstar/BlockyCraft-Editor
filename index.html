@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>BlocklyCraft Editor</title>
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar">
+        <span class="logo">🧱BlockyCraft</span>
+        <div class="controls">
+            <input type="text" id="scriptName" placeholder="스크립트 이름 입력...">
+            <button onClick="saveConfig()" class="save-btn">
+                <span class="icon">📥</span> 다운로드 (.json)
+            </button>
+        </div>
+    </div>
+
+    <div id="blocklyArea">
+        <div id="blocklyDiv"></div>
+    </div>
+
+    <xml id="toolbox" style="display: none">
+        <category name = "이벤트" colour = "#FFAB19">
+            <block type="event_player_join"></block>
+        </category>
+        <category name="액션" colour="#4C97FF">
+            <block type="action_send_message"></block>
+        </category>
+    </xml>
+
+    <script src = "script.js"></script>
+</body>
