@@ -22,17 +22,24 @@
     <div id="blocklyArea">
         <div id="blocklyDiv"></div>
     </div>
-
     <xml id="toolbox" style="display: none">
         <category name="이벤트" colour="#FFB900">
             <block type="event_player_join"></block>
+            <block type="event_player_quit"></block>
+            <block type="event_block_break"></block>
+            <block type="event_player_chat"></block>
         </category>
-        <category name="액션" colour="#5BBD72">
-            <block type="action_send_msg_to"></block>
+        <category name="조건" colour="#4A90E2">
+            <block type="condition_if"></block>
+            <block type="logic_compare"></block>
         </category>
         <category name="데이터" colour="#9B59B6">
+            <block type="placeholder_event_block"></block>
             <block type="placeholder_event_player"></block>
             <block type="placeholder_event_world"></block>
+            <block type="text_value"></block> </category>
+        <category name="액션" colour="#5BBD72">
+            <block type="action_send_msg_to"></block>
         </category>
     </xml>
 

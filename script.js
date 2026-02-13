@@ -30,6 +30,14 @@ Blockly.Blocks['event_player_chat'] = {
         this.setColour("#FFB900");
     }
 };
+//------------------------------------------------------------------------------------------
+Blockly.Blocks['placeholder_event_block'] = {
+  init: function() {
+    this.appendDummyInput().appendField("이벤트-블록");
+    this.setOutput(true, "String");
+    this.setColour("#9B59B6");
+  }
+};
 
 Blockly.Blocks['placeholder_event_player'] = {
   init: function() {
@@ -54,6 +62,17 @@ Blockly.Blocks['target_all_players'] = {
     this.setColour("#9B59B6");
   }
 };
+
+Blockly.Blocks['text_value'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField('"')
+        .appendField(new Blockly.FieldTextInput("입력"), "TEXT")
+        .appendField('"');
+    this.setOutput(true, "String");
+    this.setColour("#5bc0de");
+  }
+};
 //------------------------------------------------------------------------------------------
 Blockly.Blocks['action_send_msg_to'] = {
   init: function() {
@@ -63,7 +82,7 @@ Blockly.Blocks['action_send_msg_to'] = {
 
     this.appendDummyInput()
         .appendField("에게")
-        .appendField(new Blockly.FieldTextInput("메시지 내용을 입력하세요"), "MSG") // 바로 입력!
+        .appendField(new Blockly.FieldTextInput("메시지 내용을 입력하세요"), "MSG")
         .appendField("메시지 전송");
 
     this.setInputsInline(true);
@@ -74,7 +93,29 @@ Blockly.Blocks['action_send_msg_to'] = {
   }
 };
 //------------------------------------------------------------------------------------------
+Blockly.Blocks['condition_if'] = {
+  init: function() {
+    this.appendValueInput("CONDITION")
+        .setCheck("Boolean")
+        .appendField("만약");
+    this.appendStatementInput("DO")
+        .appendField("실행:");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#4A90E2");
+  }
+};
 
+Blockly.Blocks['logic_compare'] = {
+  init: function() {
+    this.appendValueInput("A").setCheck(null);
+    this.appendDummyInput().appendField("=");
+    this.appendValueInput("B").setCheck(null);
+    this.setOutput(true, "Boolean");
+    this.setInputsInline(true);
+    this.setColour("#4A90E2");
+  }
+};
 const workspace = Blockly.inject('blocklyDiv', {
     toolbox: document.getElementById('toolbox'),
     theme: Blockly.Themes.Dark,
