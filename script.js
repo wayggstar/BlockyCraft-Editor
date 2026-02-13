@@ -1,6 +1,6 @@
 Blockly.Blocks['event_player_join'] = {
     init: function() {
-        this.appendDummyInput().appendField("🚀 [이벤트] 플레이어 접속");
+        this.appendDummyInput().appendField("[이벤트] 플레이어 접속");
         this.appendStatementInput("DO").setCheck(null);
         this.setColour("#FFB900");
         this.setTooltip("플레이어 접속 시 실행");
@@ -9,7 +9,7 @@ Blockly.Blocks['event_player_join'] = {
 
 Blockly.Blocks['placeholder_event_player'] = {
   init: function() {
-    this.appendDummyInput().appendField("👤 event-player");
+    this.appendDummyInput().appendField("event-player");
     this.setOutput(true, "String");
     this.setColour("#9B59B6");
   }
@@ -17,7 +17,7 @@ Blockly.Blocks['placeholder_event_player'] = {
 
 Blockly.Blocks['placeholder_event_world'] = {
   init: function() {
-    this.appendDummyInput().appendField("🌍 event-world");
+    this.appendDummyInput().appendField("event-world");
     this.setOutput(true, "String");
     this.setColour("#9B59B6");
   }
