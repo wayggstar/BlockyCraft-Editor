@@ -1,6 +1,6 @@
 Blockly.Blocks['event_player_join'] = {
     init: function() {
-        this.appendDummyInput().appendField("[이벤트] 플레이어 접속");
+        this.appendDummyInput().appendField("[이벤트] 플레이어 접속시");
         this.appendStatementInput("DO").setCheck(null);
         this.setColour("#FFB900");
         this.setTooltip("플레이어 접속 시 실행");
@@ -9,7 +9,7 @@ Blockly.Blocks['event_player_join'] = {
 
 Blockly.Blocks['placeholder_event_player'] = {
   init: function() {
-    this.appendDummyInput().appendField("event-player");
+    this.appendDummyInput().appendField("이벤트-플레이어");
     this.setOutput(true, "String");
     this.setColour("#9B59B6");
   }
@@ -17,7 +17,15 @@ Blockly.Blocks['placeholder_event_player'] = {
 
 Blockly.Blocks['placeholder_event_world'] = {
   init: function() {
-    this.appendDummyInput().appendField("event-world");
+    this.appendDummyInput().appendField("이벤트-월드");
+    this.setOutput(true, "String");
+    this.setColour("#9B59B6");
+  }
+};
+
+Blockly.Blocks['target_all_players'] = {
+  init: function() {
+    this.appendDummyInput().appendField("전체 플레이어");
     this.setOutput(true, "String");
     this.setColour("#9B59B6");
   }
@@ -25,14 +33,20 @@ Blockly.Blocks['placeholder_event_world'] = {
 //------------------------------------------------------------------------------------------
 Blockly.Blocks['action_send_msg_to'] = {
   init: function() {
+    this.appendValueInput("TARGET")
+        .setCheck(["String", "Player"])
+        .appendField("대상:");
+
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["플레이어", "PLAYER"], ["전체", "ALL"]]), "TARGET")
-        .appendField("에게 메시지 전송:");
-    this.appendValueInput("CONTENT").setCheck(["String", "Number"]);
+        .appendField("에게")
+        .appendField(new Blockly.FieldTextInput("메시지 내용을 입력하세요"), "MSG") // 바로 입력!
+        .appendField("메시지 전송");
+
+    this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour("#5BBD72");
-    this.setInputsInline(true);
+    this.setTooltip("대상을 지정하여 메시지를 보냅니다.");
   }
 };
 //------------------------------------------------------------------------------------------
