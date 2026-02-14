@@ -22,29 +22,9 @@ body, html {
     z-index: 100;
 }
 
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.badge {
-    background: #444;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 0.7rem;
-    color: #aaa;
-}
-
-.controls {
-    display: flex;
-    gap: 15px;
 }
 
 input#scriptName {
@@ -54,12 +34,6 @@ input#scriptName {
     border-radius: 8px;
     color: white;
     width: 250px;
-    transition: border 0.3s;
-}
-
-input#scriptName:focus {
-    outline: none;
-    border-color: #27ae60;
 }
 
 .save-btn {
@@ -70,19 +44,6 @@ input#scriptName:focus {
     border-radius: 8px;
     font-weight: 700;
     cursor: pointer;
-    transition: transform 0.2s, background 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.save-btn:hover {
-     background: #2ecc71;
-     transform: translateY(-2px);
-}
-
-.save-btn:active {
-    transform: translateY(0);
 }
 
 #blocklyArea {
@@ -95,69 +56,17 @@ input#scriptName:focus {
     width: 100%;
 }
 
-.blocklyTreeLabel {
-    font-size: 14px;
-    font-weight: 700;
-    color: #eee;
-}
-
-.blocklySelected > .blocklyPath {
-    stroke: #ffffff !important;
-    stroke-width: 3px !important;
-}
-
-.blocklyFlyoutBackground {
-    fill: #2d2d2d !important;
-}
-
-.blocklyToolboxDiv {
-    background-color: #252525 !important;
-    border-right: 1px solid #3d3d3d;
-    padding-top: 10px;
-}
-
-.blocklyTreeRow {
-    margin: 5px 8px !important;
-    padding: 8px 12px !important;
-    border-radius: 8px !important;
-    transition: background 0.2s, color 0.2s;
-}
-
-.blocklyTreeRow:hover {
-    background-color: #3d3d3d !important;
-}
-
-.blocklyTreeSelected {
-    background-color: #444 !important;
-}
-
-.blocklyTreeSelected .blocklyTreeLabel {
-    color: #ffffff !important;
-}
-
-.blocklyFlyoutBackground {
-    fill: #252525 !important;
-    fill-opacity: 0.95 !important;
-}
-
-.blocklyMainWorkspaceScrollbar {
-    display: block;
+.blocklyWorkspaceSearch {
+    background-color: #2d2d2d !important;
+    border: 1px solid #555 !important;
+    color: white !important;
 }
 
 ::-webkit-scrollbar {
     width: 8px;
-    height: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #1e1e1e;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #444;
     border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
